@@ -10,6 +10,12 @@ class Article:
     def __repr__(self):
         return f'<Article {self.title}>'
 
+    def __eq__(self, other):
+        if not isinstance(other, Article):
+            return NotImplemented
+        return self.id == other.id and self.title == other.title and \
+               self.author_id == other.author_id and self.magazine_id == other.magazine_id
+
     @property
     def title(self):
         return self._title

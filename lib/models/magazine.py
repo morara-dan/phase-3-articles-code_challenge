@@ -9,6 +9,11 @@ class Magazine:
     def __repr__(self):
         return f'<Magazine {self.name} ({self.category})>'
 
+    def __eq__(self, other):
+        if not isinstance(other, Magazine):
+            return NotImplemented
+        return self.id == other.id and self.name == other.name and self.category == other.category
+
     @property
     def name(self):
         return self._name

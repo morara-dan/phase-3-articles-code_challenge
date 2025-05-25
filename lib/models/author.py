@@ -8,6 +8,11 @@ class Author:
     def __repr__(self):
         return f'<Author {self.name}>'
 
+    def __eq__(self, other):
+        if not isinstance(other, Author):
+            return NotImplemented
+        return self.id == other.id and self.name == other.name
+
     @property
     def name(self):
         return self._name
