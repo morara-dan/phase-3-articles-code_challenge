@@ -3,8 +3,14 @@ from lib.models.magazine import Magazine
 from lib.models.article import Article
 from lib.db.seed import seed_database
 from lib.db.connection import get_connection
+from scripts.setup_db import setup_database
+import os
 
 def run_queries():
+    if os.path.exists('articles.db'):
+        os.remove('articles.db')
+        print("Existing articles.db removed.")
+    setup_database()
     seed_database()
     print("\n--- Running Example Queries ---")
 
