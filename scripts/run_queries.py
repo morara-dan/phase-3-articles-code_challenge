@@ -38,7 +38,7 @@ def run_queries():
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("""
-        SELECT m.name, COUNT(DISTINCT a.author_id) AS num_authors
+        SELECT m.name, COUNT(DISTINCT a.id) AS num_authors
         FROM magazines m
         JOIN articles art ON m.id = art.magazine_id
         JOIN authors a ON art.author_id = a.id
