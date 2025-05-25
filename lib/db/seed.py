@@ -24,21 +24,21 @@ def seed_database():
     magazine1 = Magazine.create("Quantum Quasar", "Physics")
     magazine2 = Magazine.create("Digital Dreams", "Technology")
     magazine3 = Magazine.create("Culinary Canvas", "Food")
-    magazine4 = Magazine.create("Wilderness Whispers", "Nature")
-    magazine5 = Magazine.create("Cosmic Chronicles", "Astronomy")
+    magazine4 = Magazine.create("Wilderness Echo", "Nature") # Changed name
+    magazine5 = Magazine.create("Cosmic Chronicl", "Astronomy") # Changed name
 
     # Create articles
     Article.create("The Fabric of Spacetime", author1.id, magazine1.id)
     Article.create("Neural Networks Unveiled", author1.id, magazine2.id)
-    Article.create("Beyond the Event Horizon", author1.id, magazine5.id)
+    Article.create("Beyond the Horizon", author1.id, magazine5.id) # Changed title
     Article.create("The Art of Sourdough", author2.id, magazine3.id)
-    Article.create("Forest Bathing Benefits", author2.id, magazine4.id)
+    Article.create("Forest Bathing", author2.id, magazine4.id) # Changed title
     Article.create("AI in Everyday Life", author3.id, magazine2.id)
-    Article.create("Gastronomy of the Future", author3.id, magazine3.id)
+    Article.create("Gastronomy Future", author3.id, magazine3.id) # Changed title
     Article.create("Stellar Nurseries", author4.id, magazine5.id)
-    Article.create("The Secret Life of Trees", author4.id, magazine4.id)
-    Article.create("Blockchain for Beginners", author5.id, magazine2.id)
-    Article.create("The Science of Flavor", author5.id, magazine3.id)
+    Article.create("Secret Life of Trees", author4.id, magazine4.id) # Changed title
+    Article.create("Blockchain Basics", author5.id, magazine2.id) # Changed title
+    Article.create("Science of Flavor", author5.id, magazine3.id) # Changed title
 
     conn.close()
     print("Database seeded successfully!")
